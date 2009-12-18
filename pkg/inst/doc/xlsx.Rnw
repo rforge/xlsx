@@ -1,0 +1,137 @@
+% \VignetteIndexEntry{Read, write, format Excel 2007 (xlsx) files} 
+% \VignetteDepends{}
+% \VignetteKeywords{spreadsheet, Excel 2007, java}
+% \VignettePackage{xlsx}
+
+% setwd('H:/user/R/Adrian/findataweb/temp/xlsx/inst/doc/')
+% Sweave('xlsx.Rnw');system("mypdflatex xlsx")
+
+%\documentclass{article}
+\documentclass[nofootinbib]{revtex4}
+
+\usepackage{Sweave}
+\usepackage{hyperref}
+\hypersetup{colorlinks,%
+            citecolor=black,%
+            linkcolor=blue,%
+            urlcolor=blue,%
+            }
+\newcommand{\Rpackage}[1]{\textit{#1}}
+\newcommand{\Rfunction}[1]{\textit{#1}}
+\newcommand{\Robject}[1]{\texttt{#1}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\textit{#1}}}
+\newcommand{\Rfunarg}[1]{{\textit{#1}}}
+\newcommand{\R}{{\normalfont\textsf{R }}{}}
+\newcommand{\classdef}[1]{%
+  {\em #1}
+}
+\newcommand{\code}[1]{{\texttt{#1}}}
+\newcommand{\file}[1]{{\texttt{#1}}}
+
+\begin{document}
+
+\title{Read, write, format Excel 2007 (xlsx) files}
+\author{Adrian A. Dr\u{a}gulescu}
+\email{adrian.dragulescu@gmail.com}
+\date{\today, last modified on 2009-11-05}
+
+\begin{abstract}
+The \code{xlsx} package provides tools neccessary to interact with 
+Excel 2007 files from \R.  The user can read and write xlsx files, and
+can control the appearance of the spreadsheet by setting data formats,
+fonts, colors, borders.  Set the print area, the zoom control, create 
+split and freeze panels, adding headers and footers.  The package uses
+a java library from the Apache POI project. 
+\end{abstract}
+%\pacs{R, Excel 2007, Java, }
+
+\maketitle
+\tableofcontents
+
+<<setup, echo=FALSE, results=hide>>=
+options(width=72, continue=" ")
+require(xlxs)
+@ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+The \code{xlsx} was developed to cover a missing piece of the \R users
+experience.  While a power \R user usually scoffs at the use of Excel,
+in an office environment we are often faced to interact with
+co-workers or managers who prefer to have their information in a
+spreadsheet format.  Also, for small data sets and for presentation
+purposes Excel's formatting can prove useful.  A flexible way to
+manipulate Excel 2007 xlsx files from \R would then be a nice addition. 
+
+I've focused on Excel 2007 because for Excel 97 there are already
+several solutions, \cite{RODBC}, \cite{xlsReadWrite},
+\cite{RExcelInstaller}, etc.  The xlsx Excel 2007 file format is
+essentially a zipped set of xml files.  Interacting with these files
+from \R has been pioneered by the prolific Duncan Temple Lang in the
+package \cite{RExcelXML}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{High level API}
+\label{highLevelAPI}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Low level API}
+\label{lowLevelAPI}
+
+\subsection{Cell formatting}
+\label{cellFormatting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{Conclusions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix: Methods for xlsx objects}
+\label{appendixMethods}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+
+\bibitem{R} R Development Core Team:
+\emph{R: A Language and Environment for Statistical Computing},
+R Foundation for Statistical Computing, Vienna, Austria.
+ISBN 3-900051-07-0, URL \url{http://www.R-project.org}
+
+\bibitem{IBrokers}Jeffrey A. Ryan: \emph{IBrokers: R API to
+  Interactive Brokers Trader Workstation}, R package version 0.1-0,
+  2008
+
+\bibitem{proto}Louis Kates and Thomas Petzoldt (2007) \emph{proto:
+  Prototype object-based programming.} R package version
+  0.3-8. URL \url{http://code.google.com/p/r-proto/}
+  
+\bibitem{KatesPetzoldt} Kates, L., and Petzoldt, T. (2004)
+  "Prototype-Based Programming in Statistical Computation.", URL
+  \url{http://r-proto.googlecode.com/files/prototype_approaches.pdf}.
+
+\bibitem{Roo} Bengtsson, H., (2003) \emph{The R.oo package - Object-Oriented
+  Programming with References Using Standard R Code}, Proceedings of
+  the 3rd International Workshop on Distributed Statistical Computing
+  (DSC 2003), ISSN 1609-395X, Hornik, K.; Leisch, F. \& Zeileis,
+  A. (ed.)
+
+\bibitem{PA} Peter Carl and Brian G. Peterson
+  (2008). PerformanceAnalytics: Econometric tools for performance and
+  risk analysis.. R package version 0.9.7.1.
+  \url{http://braverock.com/R/}
+  
+\end{thebibliography}
+
+\end{document}
