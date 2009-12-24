@@ -6,7 +6,7 @@
 \alias{getCellValue}
 \title{Functions to manipulate cells.}
 \description{
-Functions to manipulate worksheets. 
+Functions to manipulate cells. 
 }
 \usage{
 
@@ -43,13 +43,14 @@ getCellValue(cell, keepFormulas=FALSE)
   cells in the row. 
   
   \code{getCellValue} returns the value in the cell as an R object.
-  Type conversions are done behind the scene.
+  Type conversions are done behind the scene.  This function is not
+  vectorized. 
 }
 \details{
-  \code{setCellValue} will write the content of an R variable into the
-  cell.  \code{Date} and \code{POSIXct} objects are passed in as
-  numerical values.  To format them as dates in Excel see
-  \code{CellStyle}.
+  \code{setCellValue} writes the content of an R variable into the cell.
+  \code{Date} and \code{POSIXct} objects are passed in as numerical
+  values.  To format them as dates in Excel see \code{\link{CellStyle}}.
+  This function is not vectorized. 
 }
 
 \author{Adrian Dragulescu}

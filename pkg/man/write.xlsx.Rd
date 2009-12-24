@@ -1,6 +1,6 @@
 \name{write.xlsx}
 \alias{write.xlsx}
-\title{Write a \code{data.frame} to an Excel 2007 workbook.}
+\title{Write a data.frame to an Excel 2007 workbook.}
 \description{
 Write a \code{data.frame} to an Excel 2007 workbook.
 }

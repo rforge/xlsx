@@ -7,8 +7,7 @@ Functions to do various spreadsheets effects.
 }
 \usage{
 
-addMergedRegion(sheet, startRow, endRow, startColum,
-  endColumn)
+addMergedRegion(sheet, startRow, endRow, startColum, endColumn)
 
 removeMergedRegion(ind)
 
@@ -19,7 +18,6 @@ createFreezePane(sheet, rowSplit, colSplit, startRow=NULL,
 
 createSplitPane(sheet, xSplitPos=2000, ySplitPos=2000,
   startRow=1, startColumn=1, position="PANE_LOWER_LEFT")
-
 
 setPrintArea(wb, sheetIndex, startColumn, endColumn, startRow,
   endRow)

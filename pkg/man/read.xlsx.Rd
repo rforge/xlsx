@@ -1,6 +1,6 @@
 \name{read.xlsx}
 \alias{read.xlsx}
-\title{ Read the contents of a worksheet into an R \code{data.frame}}
+\title{ Read the contents of a worksheet into an R data.frame}
 \description{
 Read the contents of a worksheet into an R \code{data.frame}.
 }

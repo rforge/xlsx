@@ -21,19 +21,19 @@
   Word, PowerPoint, Outlook, Visio, etc.)  By using the \code{rJava}
   package that links \R and Java, we can piggy back on the excellent
   work already done by the folks at the Apache project and provide this
-  functionality in R.  For the \code{xlsx} package we use only a
+  functionality in R.  The \code{xlsx} package uses only a
   subset of the Apache POI project, namely the one dealing with Excel
   2007 files.
   
   A package with similar functionality to \code{xlsx} is maintained
   by Duncan Temple Lang at \url{http://www.omegahat.org/RExcelXML/}.
   The approach taken there is to directly process the underlying
-  \code{XML} files.  You should check it out too as that approach may be
+  \code{XML} files.  You should check it out as that approach may be
   superior in certain cases.  For example, the package \code{xlsx} has a
   bigger memory footprint at start-up.
   
-  Please read the available vignette and the xlsx manual.  There are
-  also a suite of tests you can check in folder \code{/tests/}.
+  Please read this xlsx manual.  There are also a collection of tests you
+  can learn from in folder \code{/tests/}.
 
   Patches with bug fixes and improvements are welcome.
   
