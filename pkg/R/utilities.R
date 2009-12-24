@@ -7,6 +7,9 @@
   if (jversion <= "1.5.0")
     stop(paste("Your java version is ", jversion,
                  ".  Need 1.5.0 or higher.", sep=""))
+
+  wb <- createWorkbook()   # load/initialize jars here as it takes 
+  rm(wb)                   # a few seconds ...
 }
 
 ########################################################################
