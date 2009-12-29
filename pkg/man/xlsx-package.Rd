@@ -32,8 +32,8 @@
   superior in certain cases.  For example, the package \code{xlsx} has a
   bigger memory footprint at start-up.
   
-  Please read this xlsx manual.  There are also a collection of tests you
-  can learn from in folder \code{/tests/}.
+  A collection of tests that can be used as examples are located 
+  in folder \code{/tests/}.
 
   Patches with bug fixes and improvements are welcome.
   

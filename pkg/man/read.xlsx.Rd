@@ -12,7 +12,7 @@ read.xlsx(file, sheetIndex, sheetName=NULL, rowIndex=NULL,
   \item{file}{the \emph{absolute} path to the file which the data are to
     be read from.}
   \item{sheetIndex}{a number representing the sheet index in the workbook.}
-  \item{sheetname}{a character string with the sheet name.}
+  \item{sheetName}{a character string with the sheet name.}
   \item{rowIndex}{a numeric vector indicating the rows you want to
     extract.  If \code{NULL}, all the rows found will be extracted.}
   \item{as.data.frame}{a logical value indicating if the result should

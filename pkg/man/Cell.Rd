@@ -30,14 +30,15 @@ getCellValue(cell, keepFormulas=FALSE)
     be inserted into the Excel cell as rich text.}
   \item{keepFormulas}{a logical value.  If \code{TRUE} the formulas will 
     be returned as characters instead of being explicitly evaluated.}
+  \item{cell}{an object of type \code{Cell}.}
 }
 
 \value{
   
   \code{createCell} creates a matrix of lists, each element of the list
-  being a java object references each pointing to an empty cell.  The
-  dimnames of this matrix are taken from the names of the rows and the
-  \code{colIndex} variable.
+  being a java object reference to an object of type Cell representing
+  an empty cell.  The dimnames of this matrix are taken from the names
+  of the rows and the \code{colIndex} variable.
     
   \code{getCells} returns a list of java object references for all the
   cells in the row. 

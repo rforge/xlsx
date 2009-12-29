@@ -9,7 +9,7 @@ Create a Font object.
 
 createFont(wb, color=NULL, fontHeightInPoints=NULL, fontName=NULL,
   isItalic=FALSE, isStrikeout=FALSE, isBold=FALSE, underline=NULL,
-  boldweight=NULL, setFamily=NULL)
+  boldweight=NULL)
 
 }
 \arguments{

@@ -2,18 +2,18 @@
 ######################################################################
 # 
 #
-addMergedRegion <- function(sheet, startRow, endRow, startColum,
+addMergedRegion <- function(sheet, startRow, endRow, startColumn,
   endColumn)
 {
 
   cellRangeAddress <- .jnew("org/apache/poi/ss/util/CellRangeAddress",
-    as.integer(startRow-1), as.integer(endRow-1), as.integer(startColum-1),
-    as.integer(endColum-1))
+    as.integer(startRow-1), as.integer(endRow-1), as.integer(startColumn-1),
+    as.integer(endColumn-1))
   ind <- .jcall(sheet, "I", "addMergedRegion", cellRangeAddress)
     
   invisible(ind)  
 }
-removeMergedRegion <- function(ind)
+removeMergedRegion <- function(sheet, ind)
   .jcall(sheet, "V", as.integer(ind))
 
 
@@ -33,16 +33,16 @@ autoSizeColumn <- function(sheet, colIndex)
 ######################################################################
 # fit contents to column. col can be a vector of column indices.
 #
-createFreezePane <- function(sheet, rowSplit, colSplit, topRow=NULL,
-  leftmostColumn=NULL)
+createFreezePane <- function(sheet, rowSplit, colSplit, startRow=NULL,
+  startColumn=NULL)
 {
-  if (is.null(topRow) & is.null(leftmostColumn)){
+  if (is.null(startRow) & is.null(startColumn)){
     .jcall(sheet, "V", "createFreezePane", as.integer(colSplit-1),
       as.integer(rowSplit-1))
   } else {   
     .jcall(sheet, "V", "createFreezePane", as.integer(colSplit-1),
-      as.integer(rowSplit-1), as.integer(leftmostColumn-1),
-      as.integer(topRow-1))
+      as.integer(rowSplit-1), as.integer(startColumn-1),
+      as.integer(startRow-1))
   }
   
   invisible()  

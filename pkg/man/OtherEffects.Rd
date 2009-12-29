@@ -1,15 +1,21 @@
 \name{OtherEffects}
 \alias{OtherEffects}
+\alias{addMergedRegion}
+\alias{removeMergedRegion}
 \alias{autoSizeColumn}
+\alias{createFreezePane}
+\alias{createSplitPane}
+\alias{setPrintArea}
+\alias{setZoom}
 \title{Functions to do various spreadsheets effects.}
 \description{
 Functions to do various spreadsheets effects.
 }
 \usage{
 
-addMergedRegion(sheet, startRow, endRow, startColum, endColumn)
+addMergedRegion(sheet, startRow, endRow, startColumn, endColumn)
 
-removeMergedRegion(ind)
+removeMergedRegion(sheet, ind)
 
 autoSizeColumn(sheet, colIndex)
 
@@ -23,8 +29,6 @@ setPrintArea(wb, sheetIndex, startColumn, endColumn, startRow,
   endRow)
 
 setZoom(sheet, numerator=100, denominator=100)
-
-
 }
 \arguments{
   \item{sheet}{a \code{\link{Worksheet}} object.}
@@ -36,12 +40,29 @@ setZoom(sheet, numerator=100, denominator=100)
   \item{startColumn}{a numeric value for the starting column.}
   
   \item{endColumn}{a numeric value for the ending column.}
+
+  \item{ind}{a numeric value indicating which merged region you want to
+    remove.}
   
   \item{position}{a character.  Valid value are "PANE_LOWER_LEFT",
     "PANE_LOWER_RIGHT", "PANE_UPPER_LEFT", "PANE_UPPER_RIGHT".}
   
   \item{colIndex}{a numeric vector specifiying the columns you want to
     auto size.}
+
+  \item{rowSplit}{a numeric value for the row to split.}
+  
+  \item{colSplit}{a numeric value for the column to split.}
+
+  \item{xSplitPos}{a numeric value for the horizontal position of split in
+    1/20 of a point.}
+  
+  \item{ySplitPos}{a numeric value for the vertical position of split in
+    1/20 of a point.}
+
+  \item{wb}{a \code{\link{Workbook}} object.}
+  
+  \item{sheetIndex}{a numeric value for the worksheet index.}
   
   \item{numerator}{a numeric value representing the numerator
     of the zoom ratio.}
@@ -57,7 +78,9 @@ setZoom(sheet, numerator=100, denominator=100)
   you can implement it in R.}
 
 \value{
-  None.
+  \code{addMergedRegion} returns a numeric value to label the merged
+  region.  You should use this value as the \code{ind} if you want to
+  \code{removeMergedRegion}.
 }
 \author{Adrian Dragulescu}
 \examples{

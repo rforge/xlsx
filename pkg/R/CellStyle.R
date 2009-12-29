@@ -9,21 +9,21 @@ createCellStyle <- function(wb, hAlign=NULL, vAlign=NULL, borderPosition=NULL,
     "createCellStyle") 
 
   if (!is.null(hAlign))
-    .jcall(cellStyle, "V", "setAlignment", xlsx::CELL_LINES[hAlign])
+    .jcall(cellStyle, "V", "setAlignment", xlsx:::.CELL_STYLES[hAlign])
 
   if (!is.null(vAlign))
-    .jcall(cellStyle, "V", "setVerticalAlignment", xlsx::CELL_LINES[vAlign])
+    .jcall(cellStyle, "V", "setVerticalAlignment", xlsx:::.CELL_STYLES[vAlign])
 #browser()
   if (!is.null(borderPosition)){
     switch(borderPosition,
       BOTTOM = .jcall(cellStyle, "V", "setBorderBottom",
-        .jshort(xlsx:::CELL_STYLES[borderPen])), 
+        .jshort(xlsx:::.CELL_STYLES[borderPen])), 
       LEFT   = .jcall(cellStyle, "V", "setBorderLeft",
-        .jshort(xlsx:::CELL_STYLES[borderPen])),
+        .jshort(xlsx:::.CELL_STYLES[borderPen])),
       TOP    = .jcall(cellStyle, "V", "setBorderTop",
-        .jshort(xlsx:::CELL_STYLES[borderPen])),
+        .jshort(xlsx:::.CELL_STYLES[borderPen])),
       RIGHT  = .jcall(cellStyle, "V", "setBorderRight",
-        .jshort(xlsx:::CELL_STYLES[borderPen])))
+        .jshort(xlsx:::.CELL_STYLES[borderPen])))
   }
 
   if (!is.null(borderColor))
@@ -39,7 +39,7 @@ createCellStyle <- function(wb, hAlign=NULL, vAlign=NULL, borderPosition=NULL,
   
   if (!is.null(fillPattern))
     .jcall(cellStyle, "V", "setFillPattern",
-       .jshort(xlsx::CELL_STYLES[fillPattern]))
+       .jshort(xlsx:::.CELL_STYLES[fillPattern]))
 
   if (!is.null(font))
     .jcall(cellStyle, "V", "setFont", font)
@@ -65,4 +65,12 @@ setCellStyle <- function(cell, cellStyle)
   invisible(NULL)
 }
 
+######################################################################
+# Get the cell style for one cell. 
+# Only one cell and one value.
+#
+getCellStyle <- function(cell)
+{ 
+  .jcall(cell,  "Lorg/apache/poi/ss/usermodel/CellStyle;", "getCellStyle")
+}
 

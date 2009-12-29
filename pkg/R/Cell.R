@@ -114,27 +114,27 @@ getCellValue <- function(cell, keepFormulas=FALSE)
 ##   cmnt
 ## }
 
-createComment <- function(x, row, col, sheet, author=NULL)
-{
-  cmnt <- .jcall(sheet, "Lorg/apache/poi/xssf/usermodel/XSSFComment;",
-                 "createComment")
-  .jcall(cmnt, "V", "setString", x)
-  .jcall(cmnt, "V", "setRow", as.integer(row))
-  .jcall(cmnt, "V", "setColumn", .jshort(col))
+## createComment <- function(x, row, col, sheet, author=NULL)
+## {
+##   cmnt <- .jcall(sheet, "Lorg/apache/poi/xssf/usermodel/XSSFComment;",
+##                  "createComment")
+##   .jcall(cmnt, "V", "setString", x)
+##   .jcall(cmnt, "V", "setRow", as.integer(row))
+##   .jcall(cmnt, "V", "setColumn", .jshort(col))
   
-  if (!is.null(author))
-    .jcall(cmnt, "V", "setAuthor", author)
+##   if (!is.null(author))
+##     .jcall(cmnt, "V", "setAuthor", author)
 
-  cmnt
-}
+##   cmnt
+## }
 
-getCellComment <- function(row, col, sheet)
-{
-  aux <- .jcall(sheet, "Lorg/apache/poi/xssf/usermodel/XSSFComment;",
-    "getCellComment", as.integer(row), as.integer(col))
+## getCellComment <- function(row, col, sheet)
+## {
+##   aux <- .jcall(sheet, "Lorg/apache/poi/xssf/usermodel/XSSFComment;",
+##     "getCellComment", as.integer(row), as.integer(col))
 
-  cmnt <- structure(c(aux$getAuthor(), aux$getString()$toString()),
-    names=c("author", "comment"))
+##   cmnt <- structure(c(aux$getAuthor(), aux$getString()$toString()),
+##     names=c("author", "comment"))
 
-  cmnt
-}
+##   cmnt
+## }

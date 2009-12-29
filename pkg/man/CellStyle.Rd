@@ -2,7 +2,7 @@
 \alias{CellStyle}
 \alias{createCellStyle}
 \alias{setCellStyle}
-\alias{getCellValue}
+\alias{getCellStyle}
 \title{Functions to manipulate cells.}
 \description{
 Create and set cell styles. 
@@ -15,6 +15,7 @@ createCellStyle(wb, hAlign=NULL, vAlign=NULL, borderPosition=NULL,
 
 setCellStyle(cell, cellStyle)
 
+getCellStyle(cell)
 
 }
 \arguments{
@@ -73,6 +74,9 @@ setCellStyle(cell, cellStyle)
 \value{
   
   \code{createCellStyle} creates a CellStyle object.
+
+  \code{getCellStyle} returns the associated CellStyle object for the
+    given Cell.
     
 }
 \details{

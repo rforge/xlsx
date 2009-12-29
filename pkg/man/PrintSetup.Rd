@@ -1,4 +1,5 @@
 \name{PrintSetup}
+\alias{printSetup}
 \alias{PrintSetup}
 \title{Function to manipulate print setup.}
 \description{
@@ -6,13 +7,14 @@ Function to manipulate print setup.
 }
 \usage{
 
-PrintSetup(sheet, fitHeight=NULL,
+printSetup(sheet, fitHeight=NULL,
   fitWidth=NULL, copies=NULL, draft=NULL, footerMargin=NULL,
   headerMargin=NULL, landscape=FALSE, pageStart=NULL, paperSize=NULL,
   noColor=NULL)
 
 }
 \arguments{
+  \item{sheet}{a worksheet object \code{\link{Worksheet}}.}
   \item{fitHeight}{numeric value to set the number of pages high to fit
     the sheet in.}
   \item{fitWidth}{numeric value to set the number of pages wide to fit
