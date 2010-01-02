@@ -9,12 +9,12 @@
   if (computer=="WORK"){
     pkgdir  <<- "H:/user/R/Adrian/findataweb/temp/xlsx/"
     outdir  <<- "H:/"
-    Rcmd    <<- "S:/All/Risk/Software/R/R-2.10.0/bin/Rcmd"
+    Rcmd    <<- "S:/All/Risk/Software/R/R-2.10.1/bin/Rcmd"
     javadir <<- "C:/Documents and Settings/e47187/workspace/xlsx/"
   } else if (computer == "LAPTOP"){
     pkgdir  <<- "C:/Users/adrian/R/findataweb/temp/xlsx/"
     outdir  <<- "C:/"
-    Rcmd    <<- '"C:/Program Files/R/R-2.10.0/bin/Rcmd"'
+    Rcmd    <<- '"C:/Program Files/R/R-2.10.1/bin/Rcmd"'
     javadir <<- "C:/Users/home/workspace/xlsx/" 
   } else if (computer == "HOME"){
   } else {
@@ -76,14 +76,14 @@
 ##################################################################
 
 version <- NULL        # keep increasing the minor
-#newVersion <- "0.1.0"  # if you want to set it by hand
+version <- "0.1.0"     # if you want to set it by hand
 
 .setEnv("WORK")   # "LAPTOP"
 
 .move.java.classes(TRUE)  # move java classes
 
 # change the version
-newVersion <- .update.DESCRIPTION(pkgdir, version)
+version <- .update.DESCRIPTION(pkgdir, version)
 
 # make the package
 setwd(outdir)
@@ -91,5 +91,14 @@ cmd <- paste(Rcmd, "build --force --binary --no-vignette", pkgdir)
 print(cmd)
 system(cmd)
 
-install.packages(paste(outdir, "xlsx_",newVersion,".zip", sep=""), repos=NULL)
+install.packages(paste(outdir, "xlsx_",version,".zip", sep=""), repos=NULL)
 
+
+# make the package for CRAN
+cmd <- paste(Rcmd, "build", pkgdir)
+print(cmd); system(cmd)
+
+
+# check source
+cmd <- paste(Rcmd, "check", pkgdir)
+print(cmd); system(cmd)

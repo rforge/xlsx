@@ -29,7 +29,7 @@ getRows(sheet, rowIndex=NULL)
 \seealso{To extract the cells from a given row, see \code{\link{Cell}}.}
 \examples{
 
-file <- paste(.Library, "/xlsx/tests/test_import.xlsx", sep="")
+file <- system.file("tests", "test_import.xlsx", package = "xlsx")
 
 wb <- loadWorkbook(file)  
 sheets <- getSheets(wb)

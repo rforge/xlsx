@@ -58,7 +58,7 @@ getCellValue(cell, keepFormulas=FALSE)
 \seealso{To format cells, see \code{\link{CellStyle}}.}
 \examples{
 
-file <- paste(.Library, "/xlsx/tests/test_import.xlsx", sep="")
+file <- system.file("tests", "test_import.xlsx", package = "xlsx")
 
 wb <- loadWorkbook(file)  
 sheets <- getSheets(wb)

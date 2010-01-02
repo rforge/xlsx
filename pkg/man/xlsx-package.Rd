@@ -19,11 +19,12 @@
   the Apache project, \url{http://poi.apache.org/index.html}.  This
   Apache project provides a Java API to Microsoft Documents (Excel,
   Word, PowerPoint, Outlook, Visio, etc.)  By using the \code{rJava}
-  package that links \R and Java, we can piggy back on the excellent
+  package that links \R and Java, we can piggyback on the excellent
   work already done by the folks at the Apache project and provide this
-  functionality in R.  The \code{xlsx} package uses only a
-  subset of the Apache POI project, namely the one dealing with Excel
-  2007 files.
+  functionality in R.  The \code{xlsx} package uses only a subset of the
+  Apache POI project, namely the one dealing with Excel 2007 files.  All
+  the necessary jar files are kept in package \code{xlsxjars} that is
+  imported by package \code{xlsx}.
   
   A package with similar functionality to \code{xlsx} is maintained
   by Duncan Temple Lang at \url{http://www.omegahat.org/RExcelXML/}.
@@ -35,7 +36,9 @@
   A collection of tests that can be used as examples are located 
   in folder \code{/tests/}.
 
-  Patches with bug fixes and improvements are welcome.
+  Patches with bug fixes and improvements are welcome.  The development
+  version of this package is hosted on R-Forge at
+  \url{http://r-forge.r-project.org/projects/xlsx/}.
   
   NOTE: You may need to add to your PATH variable the location
   of your JVM (e.g. C:/Program Files/Java/jre6/bin/client) to get
@@ -78,7 +81,7 @@ Maintainer: Adrian A. Dragulescu <adrian.dragulescu@gmail.com>
 require(xlsx)
 
 # example of reading xlsx sheets
-file <- paste(.Library, "/xlsx/tests/test_import.xlsx", sep="")
+file <- system.file("tests", "test_import.xlsx", package = "xlsx")
 res <- read.xlsx(file, 2)  # read the second sheet
 
 # example of writing xlsx sheets

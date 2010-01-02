@@ -70,9 +70,7 @@ and Excel string representation my differ by one second.
 \examples{
 \dontrun{
 
-#filename <- paste(tempdir(), "/usarrests.xlsx", sep="")
-
-file <- paste(.Library, "/xlsx/tests/test_import.xlsx", sep="")
+file <- system.file("tests", "test_import.xlsx", package = "xlsx")
 res <- read.xlsx(file, 1)  # read first sheet
 head(res)
 #          NA. Population Income Illiteracy Life.Exp Murder HS.Grad Frost   Area
