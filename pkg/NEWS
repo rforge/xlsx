@@ -1,0 +1,9 @@
+NEWS for package xlsx
+
+Changes in version 0.1.2
+
+ o Fixed getRows, getCells so it does not error out for empty
+ rows/cells.  Modified read.xlsx too.  Should write a UNIT TEST!
+
+ o Added append argument to write.xlsx to be able to export to
+ multiple worksheets of a file.  (Suggestion by rlearnr@gmail.com.)

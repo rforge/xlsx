@@ -56,6 +56,13 @@ test.import <- function(outdir="C:/Temp/")
   write.xlsx(x, file)
   cat("Wrote file ", file, "\n")
 
+  cat("Test append argument ... \n")
+  file <- paste(outdir, "test_export.xlsx", sep="")
+  write.xlsx(USArrests, file, sheetName="usarrests", append=TRUE)
+  cat("Wrote file ", file, "\n")
+  
+
+  
   #write.xlsx(x, file, row.names=FALSE)  # without row.names
   
 }

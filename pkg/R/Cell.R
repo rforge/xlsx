@@ -31,7 +31,8 @@ getCells <- function(row, simplify=TRUE)
     for (ic in seq_along(rowCells)){
       rowCells[[ic]] <- .jcall(row[[ir]],
         "Lorg/apache/poi/xssf/usermodel/XSSFCell;", "getCell", indCol[ic])
-      namesCells[ic] <- .jcall(rowCells[[ic]], "I", "getColumnIndex")+1
+      if (!is.null(rowCells[[ic]]))
+        namesCells[ic] <- .jcall(rowCells[[ic]], "I", "getColumnIndex")+1
     }
     names(rowCells) <- namesCells  # need namesCells if spreadsheet is ragged
     res[[ir]] <- rowCells
